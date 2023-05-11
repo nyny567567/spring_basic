@@ -15,7 +15,6 @@
 	</properties>
 	<dependencies>
 		<!-- Spring -->
-		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -83,6 +82,16 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+	<!-- lombok 라이브러리 -->
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.26</version>
+    <scope>provided</scope>
+</dependency>
+	
+
 
 		<!-- @Inject -->
 		<dependency>
@@ -92,8 +101,8 @@
 		</dependency>
 				
 		<!-- Servlet -->
-		<!--  서블릿을 윗 버전으로 업데이트 -->
-		<!-- 버전을 3.1.0으로 ,  artifactId를  javax.servlet_api로  -->
+		<!-- 서블릿을 윗 버전으로 업데이트 -->
+		<!-- 버전을 3.1.0으로, artifactId를 javax.servlet-api로 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
