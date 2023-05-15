@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- 자동으로 컨트롤러와 매핑 메서드를 탐색(핸들러 맵핑, 핸들러 어댑터 빈 등록) -->
+	<annotation-driven />
+
+	<!-- css, img, js...의 파일 경로가 복잡할때 사용합니다. 
+		jsp 파일 같은 데서 경로 긴 거 일일히 쓰기 귀찮잖아요. 그럴 때 선언합니다.
+		내부 경ㄹ로를 숨겨주는 역할도 합니다. -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- 
+	컨트롤러가 리턴한 문자열 앞, 뒤에 적절한 경로를 붙여서
+	화면을 응답할 수 있도록 도와주는 뷰 리졸버~ -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 
+		아노테이션으로 (@Controller, @Service...) 등록된 클래스 객체들을 탐색해서 빈으로 등록해 주는 설정 태그.
+		base-package에다가는 탐색할 패키지 경로를 쓰시면
+		하위 패키지까지 몽땅 검색해 줍니다.
+	-->
+ 	<context:component-scan base-package="com.spring.myweb" />
+	
+
+	
+	<!-- 히카리 커넥션 풀 빈 등록 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<!-- HikariConfig 클래스 내부의 필드값을 초기화하기 위해 setter 메서드 호출 -->
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/spring_practice?serverTimezone=Asia/Seoul" />
+		<property name="username" value="spring" />
+		<property name="password" value="spring" />
+	</bean>
+	
+	<!-- 히카리 데이터소스 빈 등록 (커넥션 풀 정보를 담는 객체 등록) -->
+	<bean id="ds" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+	
+	
+	<!-- 마이바티스 SQL 동작을 위한 핵심 객체 SqlSessionFactory 클래스 빈 등록 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds" />
+		<property name="mapperLocations" value="classpath:/mappers/*Mapper.xml" />
+			<!-- <array>
+				<value>classpath:/mappers/score/ScoreMapper.xml</value>
+				<value>classpath:/mappers/board/BoardMapper.xml</value>
+				<value>classpath:/mappers/reply/ReplyMapper.xml</value>
+				<value>classpath:/mappers/img/ImgMapper.xml</value>
+			</array>
+		</property> -->
+	</bean>
+	
+	<!-- 
+		SqlSessionFactory가 여러분이 지정하신 경로의 xml 파일을 클래스로 변환하여
+		bean으로 등록하려는 시도를 할 때, 어떤 타입으로 빈 등록을 할 지를 결정해야 하는데,
+		이미 xml 파일에는 해당 파일이 어떤 인터페이스를 구현하는 구현체인지는 명시되어 있습니다.
+		그 인터페이스가 존재하는 패키지의 경로를 탐색하라는 태그입니다.
+	 -->
+	
+	
+	
+		
+
+	
+	
+	
+</beans:beans>
