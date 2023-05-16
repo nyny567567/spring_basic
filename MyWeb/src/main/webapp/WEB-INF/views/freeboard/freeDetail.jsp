@@ -13,7 +13,7 @@
                             <p>상세보기</p>
                         </div>
                         
-                        <form action="<c:url value='/freeboard/modify' method="post" />">
+                        <form action="<c:url value='/freeboard/modify' />" method="post">
                             <div>
                                 <label>DATE</label>
                                 <c:if test="${article.updateDate == null}">
