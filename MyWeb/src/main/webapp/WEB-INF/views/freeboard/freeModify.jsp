@@ -41,15 +41,14 @@
         </section>
         
         <%@ include file="../include/footer.jsp" %>
-
+      
         <script>
             //목록 이동 처리
             document.getElementById('listBtn').onclick = function() {
-                location.href="${pageContext.request.contextPath}/freeboard/freeList";     
+                location.href="${pageContext.request.contextPath}/freeboard/freeList";
             }
 
             const $form = document.updateForm;
-
 
             //수정 버튼 이벤트 처리
             document.getElementById('updateBtn').onclick = function() {
@@ -57,7 +56,6 @@
                     alert('제목은 필수 항목입니다.');
                     $form.title.focus();
                     return;
-                    
                 } else if($form.content.value === '') {
                     alert('내용은 필수 항목입니다.');
                     $form.content.focus();
@@ -65,19 +63,17 @@
                 } else {
                     $form.submit();
                 }
-
             }
 
             //삭제 버튼 이벤트 처리
             document.getElementById('delBtn').onclick = () => {
                 if(confirm('정말 삭제하시겠습니까?')) {
-                   $form.setAttribute('action', '${pageContext.request.contextPath}/freeboard/delete') 
-                   $form.setAttribute('method', 'post');
-                $form.submit();                }
+                    $form.setAttribute('action', '${pageContext.request.contextPath}/freeboard/delete');
+                    // $form.setAttribute('method', 'post');
+                    $form.submit();
+                }
             }
 
+
         </script>
-      
-      
-      
       
