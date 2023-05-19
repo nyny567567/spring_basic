@@ -102,7 +102,7 @@
 		
 		<!--  ResultSet을 제외한 모든 JDBC 객체 호출 내역을 기록 -->
 		<logger name="jdbc.audit" additivity="false">
-		<level value="warn">
+		<level value="warn" />
 		<appender-ref ref="console" />
 		</logger>
 		
