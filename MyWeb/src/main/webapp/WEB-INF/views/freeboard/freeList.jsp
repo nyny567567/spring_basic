@@ -46,6 +46,8 @@
                             		<td>${vo.bno}</td>
 	                            	<td>
 	                            		<a href="${pageContext.request.contextPath}/freeboard/content/${vo.bno}?pageNum=${pc.paging.pageNum}&cpp=${pc.paging.cpp}">${vo.title}</a>
+	                            		&nbsp; 
+	                            		<strong></strong>
 	                            	</td>
 	                            	<td>${vo.writer}</td>
 	                            	<td>

@@ -90,20 +90,4 @@ public class UserController {
 	
 	
 	
-
 }
-
-
-
-
-		model.addAttribute("userInfo", service.getInfo(id, vo));
-	}
-	
-	
-	
-}
-
-
-
-
-
