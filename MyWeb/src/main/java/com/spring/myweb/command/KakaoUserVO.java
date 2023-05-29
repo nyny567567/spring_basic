@@ -31,13 +31,13 @@ public class KakaoUserVO {
 	private KakaoAccount kakaoAccount;
 	
 	@Getter @Setter @ToString
-	class KakaoAccount {
+	static class KakaoAccount {
 		
 		private String email;
 		private Profile profile;
 		
 		@Getter @Setter @ToString
-		class Profile {
+		static class Profile {
 			
 			private String nickname;
 			
