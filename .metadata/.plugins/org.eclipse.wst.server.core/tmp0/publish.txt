@@ -1,4 +1,3 @@
 #Tomcat publish data
-#Fri May 26 18:07:41 KST 2023
-org.eclipse.jst.jee.server\:semipro=C\:\\Work\\apache-tomcat-9.0.74\\wtpwebapps\\semipro
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\ict04-05\\.m2\\repository\\org\\springframework\\spring-web\\5.3.18\\spring-web-5.3.18.jar=C\:\\Work\\apache-tomcat-9.0.74\\wtpwebapps\\semipro\\WEB-INF\\lib\\spring-web-5.3.18.jar
+#Mon May 29 15:42:00 KST 2023
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\ict04-05\\.m2\\repository\\org\\springframework\\spring-web\\5.3.18\\spring-web-5.3.18.jar=WEB-INF/lib/spring-web-5.3.18.jar
