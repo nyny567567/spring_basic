@@ -6205,3 +6205,7 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: in comment 
 2023-05-29 15:10:53,662 [Worker-168: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 10 resources
 2023-05-29 15:10:53,664 [Worker-168: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2023-05-29 15:10:53,665 [Worker-168: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-05-29 15:41:58,759 [Worker-188: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-05-29 15:41:58,762 [Worker-188: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 10 resources
+2023-05-29 15:41:58,765 [Worker-188: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-05-29 15:41:58,765 [Worker-188: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
